@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Info Binding</title>
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+  <div ng-controller="StudentController">
+    <h2>Student Information</h2>
+
+    <label>Name:</label>
+    <input type="text" ng-model="student.name"><br><br>
+
+    <label>Roll Number:</label>
+    <input type="text" ng-model="student.roll"><br><br>
+
+    <label>Course:</label>
+    <input type="text" ng-model="student.course"><br><br>
+
+    <h3>Live Preview:</h3>
+    <p>Name: {{ student.name }}</p>
+    <p>Roll Number: {{ student.roll }}</p>
+    <p>Course: {{ student.course }}</p>
+  </div>
+
+  <script>
+    // Define AngularJS module
+    var app = angular.module('studentApp', []);
+
+    // Define controller
+    app.controller('StudentController', function($scope) {
+      $scope.student = {
+        name: "John Doe",
+        roll: "101",
+        course: "Computer Science"
+      };
+    });
+  </script>
+
+</body>
+</html>
